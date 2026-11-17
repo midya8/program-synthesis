@@ -1,8 +1,8 @@
-# SynthLab
+# Program synthesis
 
 SynthLab implements counterexample-guided inductive synthesis for tiny unsigned bit-vector expressions. A learner selects a minimum-cost program fitting current examples; an exact finite verifier returns the first wrong input until the program is correct or the bounded grammar is exhausted. Every candidate, counterexample, eliminated function and full-domain output signature is replayable.
 
-[Live inspector](https://midya8.github.io/synthlab/) | [Exact grammar, certificate and sources](CONTRACT.md)
+[Live inspector](https://midya8.github.io/program-synthesis/) | [Exact grammar, certificate and sources](CONTRACT.md)
 
 ## Choose a question
 
