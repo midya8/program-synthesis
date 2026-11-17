@@ -1,6 +1,6 @@
-# SynthLab: finite bit-vector synthesis with independent certificates
+# Program synthesis: finite bit-vector synthesis with independent certificates
 
-[Live inspector](https://midya8.github.io/synthlab/). This is an explanatory implementation of established CEGIS and bottom-up enumerative synthesis, not a new algorithm. Exact claims are about a supplied finite truth table and the explicit expression grammar below.
+[Live inspector](https://midya8.github.io/program-synthesis/). This is an explanatory implementation of established CEGIS and bottom-up enumerative synthesis, not a new algorithm. Exact claims are about a supplied finite truth table and the explicit expression grammar below.
 
 ## Request, arithmetic and grammar
 
@@ -14,7 +14,7 @@ Input has exactly `bits`, `operators`, `max_cost`, `target`, `seeds`.
 
 Grammar: `E := 0 | 1 | x | y | (not E) | (neg E) | (add E E) | (and E E) | (xor E E)`, restricted to the selected operators. Ordered binary children are enumerated; no commutativity pruning is assumed. All functions are pure and total, with no loops, conditionals, multiplication, shifts, side effects or external calls.
 
-`not` flips exactly the selected bits. `neg` computes -v modulo2^bits. `add` adds modulo2^bits. `and`/`xor` are fixed-width bitwise operations. No signed comparison, arithmetic overflow trap, saturation or machine-dependent word width is used. The bit-vector semantics follow the relevant SMT-LIB operations, but SynthLab does not implement the SMT-LIB or SyGuS input languages.
+`not` flips exactly the selected bits. `neg` computes -v modulo2^bits. `add` adds modulo2^bits. `and`/`xor` are fixed-width bitwise operations. No signed comparison, arithmetic overflow trap, saturation or machine-dependent word width is used. The bit-vector semantics follow the relevant SMT-LIB operations, but Program synthesis does not implement the SMT-LIB or SyGuS input languages.
 
 ## Complete semantic frontier and canonical witnesses
 
@@ -75,11 +75,11 @@ A two-bit XOR request:
 
 ## Sources, credit and differences
 
-1. [Solar-Lezama, Tancau, Bodik, Saraswat and Seshia, *Combinatorial Sketching for Finite Programs*, ASPLOS2006](https://people.csail.mit.edu/asolar/papers/asplos06-final.pdf), Section5.4: counterexample-driven synthesize/verify loop. Their SKETCH/SAT system is not implemented here, and none of its cryptography/performance claims apply to SynthLab.
+1. [Solar-Lezama, Tancau, Bodik, Saraswat and Seshia, *Combinatorial Sketching for Finite Programs*, ASPLOS2006](https://people.csail.mit.edu/asolar/papers/asplos06-final.pdf), Section5.4: counterexample-driven synthesize/verify loop. Their SKETCH/SAT system is not implemented here, and none of its cryptography/performance claims apply to Program synthesis.
 2. [Stanford CS357, *Syntax-Guided Synthesis* lecture](https://web.stanford.edu/class/cs357/lecture15.pdf): syntax/semantic restrictions and enumerative CEGIS background. Our exact finite-table oracle and node-cost convention are stated independently.
 3. [Barbosa, Reynolds, Larraz and Tinelli, *Extending enumerative function synthesis via SMT-driven classification*, FMCAD2019](http://theory.stanford.edu/~barrett/fmcad/papers/FMCAD2019_paper_63.pdf): grammar-guided increasing-size enumeration and CEGIS refinement. We do not implement its classification/divide-and-conquer method or borrow its non-nullary-symbol cost definition.
-4. [Frankel, Schneider, Steuwer and Polgreen, *Syntax-Guided Synthesis with Counterexample-Guided E-graphs*, SMT2025 work-in-progress](https://ceur-ws.org/Vol-4008/SMT_paper11.pdf): observational equivalence/congruence and counterexample context. SynthLab uses full-domain signatures on a finite space, not e-graphs, CE-graphs or their evaluation claims.
+4. [Frankel, Schneider, Steuwer and Polgreen, *Syntax-Guided Synthesis with Counterexample-Guided E-graphs*, SMT2025 work-in-progress](https://ceur-ws.org/Vol-4008/SMT_paper11.pdf): observational equivalence/congruence and counterexample context. Program synthesis uses full-domain signatures on a finite space, not e-graphs, CE-graphs or their evaluation claims.
 5. [SMT-LIB FixedSizeBitVectors theory](https://smt-lib.org/theories-FixedSizeBitVectors.shtml), page last-updated2025-09-09 when fetched: fixed-width not/and/neg/add semantics. XOR is the usual per-bit exclusive-or; no broader SMT-LIB conformance is claimed.
-6. [cvc5 SyGuS grammar example documentation, version1.0.7](https://cvc5.github.io/docs/cvc5-1.0.7/examples/sygus-grammar.html): grammar-constrained synthesis as an existing supported tool capability. SynthLab has no cvc5 dependency, compatible API or solver integration.
+6. [cvc5 SyGuS grammar example documentation, version1.0.7](https://cvc5.github.io/docs/cvc5-1.0.7/examples/sygus-grammar.html): grammar-constrained synthesis as an existing supported tool capability. Program synthesis has no cvc5 dependency, compatible API or solver integration.
 
 Search lead `sygus.org/language/` did not fetch and is not evidence for this implementation. No novel algorithm, neural synthesis, benchmark win, runtime-optimality, unbounded logical verification, real-world coding ability or hidden-service guarantee is claimed.
