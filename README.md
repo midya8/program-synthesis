@@ -1,6 +1,6 @@
 # Program synthesis
 
-SynthLab implements counterexample-guided inductive synthesis for tiny unsigned bit-vector expressions. A learner selects a minimum-cost program fitting current examples; an exact finite verifier returns the first wrong input until the program is correct or the bounded grammar is exhausted. Every candidate, counterexample, eliminated function and full-domain output signature is replayable.
+This implementation implements counterexample-guided inductive synthesis for tiny unsigned bit-vector expressions. A learner selects a minimum-cost program fitting current examples; an exact finite verifier returns the first wrong input until the program is correct or the bounded grammar is exhausted. Every candidate, counterexample, eliminated function and full-domain output signature is replayable.
 
 [Live inspector](https://midya8.github.io/program-synthesis/) | [Exact grammar, certificate and sources](CONTRACT.md)
 
@@ -17,7 +17,7 @@ minimum expression cost are different claims. The inspectors retain each boundar
 
 A constant can fit the first XOR example. A variable can fit several more. Neither implements XOR. Bitwise complement is not modular negation. A grammar missing an operator and a bound missing one node can both exclude a solution, without proving that no program exists.
 
-SynthLab separates three claims: fits known examples, is correct on every supplied finite input, and has minimum AST node cost within the declared grammar. A full-domain semantic quotient keeps the cheapest canonical representative of each function. This quotient does not depend on target values or examples. An independent verifier enumerates **every raw grammar tree** through the cost bound, without semantic pruning or calling the generator's evaluator/frontier/text functions. That gives a separate check of grammar completeness and canonical minimum cost.
+This implementation separates three claims: fits known examples, is correct on every supplied finite input, and has minimum AST node cost within the declared grammar. A full-domain semantic quotient keeps the cheapest canonical representative of each function. This quotient does not depend on target values or examples. An independent verifier enumerates **every raw grammar tree** through the cost bound, without semantic pruning or calling the generator's evaluator/frontier/text functions. That gives a separate check of grammar completeness and canonical minimum cost.
 
 ## Run offline
 
