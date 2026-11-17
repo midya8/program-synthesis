@@ -1,6 +1,6 @@
 # Exact target-distinguishing sets
 
-[Teaching-set inspector](https://midya8.github.io/synthlab/teaching.html). Exact finite teaching sets supplement the original CEGIS replay.
+[Teaching-set inspector](https://midya8.github.io/program-synthesis/teaching.html). Exact finite teaching sets supplement the original CEGIS replay.
 
 ## Correctness is not unique identification
 
@@ -54,7 +54,7 @@ Tests preserve all base synthesis controls. New native checks cover every realiz
 - Goldman and Kearns, *On the Complexity of Teaching*, original technical report dated1992, later JCSS1995: formal unique-consistent-concept definition and Theorem8 cover equivalence. https://www.cis.upenn.edu/~mkearns/papers/teaching.pdf
 - Columbia COMS6998 lecture notes,2017: target minimum versus class-wide maximum distinction. https://www.cs.columbia.edu/~djhsu/coms6998-f17/student-work/scribe-notes/teaching_dimension.pdf
 - Princeton interactive-learning lecture notes,2017: version-space singleton constraint and separate target/class quantities. https://www.cs.princeton.edu/courses/archive/fall17/cos597A/lecnotes/machineteaching.pdf
-- Khan, Mutlu and Zhu, *How Do Humans Teach: On Curriculum Learning and Teaching Dimension*, NeurIPS2011: teaching-set/class definitions and the distinction between formal teaching predictions and human experiments. No human-behavior result is claimed for SynthLab. https://proceedings.neurips.cc/paper_files/paper/2011/file/f9028faec74be6ec9b852b0a542e2f39-Paper.pdf
+- Khan, Mutlu and Zhu, *How Do Humans Teach: On Curriculum Learning and Teaching Dimension*, NeurIPS2011: teaching-set/class definitions and the distinction between formal teaching predictions and human experiments. No human-behavior result is claimed for Program synthesis. https://proceedings.neurips.cc/paper_files/paper/2011/file/f9028faec74be6ec9b852b0a542e2f39-Paper.pdf
 - Zhu's machine-teaching project bibliography: broader teaching literature and variants, not an implementation specification. https://pages.cs.wisc.edu/~jerryzhu/machineteaching/
 - Zhu, Singla, Zilles and Rafferty, *An Overview of Machine Teaching*,2018: singleton version-space teaching objective and distinction from preference-based/recursive models. https://arxiv.org/pdf/1801.05927
 - Base synthesis research and fixed-width semantics are attributed in [CONTRACT.md](CONTRACT.md).
